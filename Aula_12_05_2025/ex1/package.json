@@ -1,0 +1,14 @@
+{
+  "name": "framework-express",
+  "version": "1.0.0",
+  "description": "Projeto com o Framework Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ranyelson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
