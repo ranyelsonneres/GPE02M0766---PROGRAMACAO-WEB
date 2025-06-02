@@ -26,4 +26,29 @@ router.post('/', (req, res) => {
 
 });
 
+//rota para editar
+router.put('/:id', (req, res) => {
+    //extrair os dados
+    const {nome, email} = req.body;
+    const {id} = req.params;
+
+    //executar a instrução SQL
+    db.query('UPDATE users SET nome = ?, email = ? WHERE id = ?', [nome, email, id], (err) =>{
+        if(err) return res.status(500).send(err);
+        res.json({id, nome, email});
+    });
+});
+
+//rota para excluir
+router.delete('/:id', (req, res) =>{
+    //pegar o ID do usuário
+    const {id} = req.params;
+
+    //executar a instrução SQL
+    db.query('DELETE FROM users WHERE id = ?', [id], (err)=>{
+        if(err) return res.status(500).send(err);
+        res.sendStatus(204);
+    });
+});
+
 module.exports = router;
