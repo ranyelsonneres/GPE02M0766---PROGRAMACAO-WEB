@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+
 //linkar com a routes/api
 const apiRoutes = require('./routes/api');
 app.use(express.json());
